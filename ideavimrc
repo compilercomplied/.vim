@@ -1,0 +1,2 @@
+let g:editor_mode="idea"
+source ~/.vim/settings/core.vim

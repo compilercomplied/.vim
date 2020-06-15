@@ -1,0 +1,87 @@
+" \ **************************************************************************************** \
+" \ Plugin Manager
+" \ **************************************************************************************** \
+
+" Auto install Plug if not installed. Runs PlugInstall afterwards.
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+" Make sure you use single quotes
+
+" ----- Editing ------------------------------------------------------------------------------
+Plug 'machakann/vim-sandwich'           " Comments+text objects.
+Plug 'tpope/vim-commentary'             " Comments.
+Plug 'tommcdo/vim-lion'                 " Aligning
+Plug 'ap/vim-css-color'                 " Friendlier HTML colour codes
+Plug 'luochen1990/rainbow'              " Diff parentheses
+Plug 'RRethy/vim-illuminate'            " Highlight match under cursor in same buffer
+Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
+Plug 'Yggdroot/indentLine'              " Display indentation for spaces
+
+" ----- Code ---------------------------------------------------------------------------------
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install'}       
+
+Plug 'Shougo/echodoc.vim'               " Show function signatures
+Plug 'xolox/vim-easytags'               " Gen ctags
+Plug 'xolox/vim-misc'                   " Dependency to easy-tags
+Plug 'liuchengxu/vista.vim'             " Browse LSP symbols
+Plug 'w0rp/ale'                         " Linting
+Plug 'pseewald/vim-anyfold'             " Language agnostic folding
+Plug 'itspriddle/vim-shellcheck'        " Bash
+
+" ----- Functionality wrappers ---------------------------------------------------------------
+Plug 'tpope/vim-fugitive'               " Git wrapper
+Plug 'rhysd/git-messenger.vim'          " Reveal the commit messages under the cursor
+Plug 'liuchengxu/vim-which-key'         " Keybinds hint
+Plug 'scrooloose/nerdtree'              " File explorer
+Plug 'liuchengxu/vim-clap', { 
+  \ 'do': ':Clap install-binary' 
+  \ }                                   " Floating window powerup.
+
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', {
+  \ 'dir': '~/.fzf',
+  \ 'do': './install --all'
+  \ }                                   " Fuzzy find (you need both you wanker)
+
+" ----- Languages ----------------------------------------------------------------------------
+"  Python
+Plug 'davidhalter/jedi-vim'             " Code completion
+Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
+
+" C#
+Plug 'OmniSharp/omnisharp-vim'          " Intellisense
+
+" Rust
+Plug 'rust-lang/rust.vim'               " General goodies
+Plug 'racer-rust/vim-racer'             " Intellisense engine
+
+" Nix
+Plug 'spwhitt/vim-nix'                  " Syntax
+
+" Wabbascript *dabs*
+Plug 'leafgarland/typescript-vim'       " General goodies 
+" Plug 'mattn/emmet-vim'                  " Improved HTML handling
+" Plug 'cakebaker/scss-syntax.vim'        " SCSS  syntax
+" Plug 'posva/vim-vue'                    " Vue components syntax
+
+" ----- Tidal env ----------------------------------------------------------------------------
+" Plug 'supercollider/scvim'              " Supercollider
+Plug 'davidgranstrom/scnvim', { 'do': ':UpdateRemotePlugins' }
+
+" ----- Appearance ---------------------------------------------------------------------------
+Plug 'altercation/vim-colors-solarized'
+Plug 'ryanoasis/vim-devicons'
+" Plug 'gruvbox-community/gruvbox'
+" Plug 'endel/vim-github-colorscheme'
+
+
+" Initialize plugin system
+call plug#end()
+
+let g:editor_mode="rich"
+source ~/.vim/settings/core.vim
