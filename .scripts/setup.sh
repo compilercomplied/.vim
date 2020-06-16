@@ -7,4 +7,5 @@ set -o nounset      # Give an error when an unbound variable is used.
 
 
 # --- links -----------------------------------------------------------------------------------
-cp $HOME/.vim/ideavimrc $HOME/.ideavimrc
+cp $HOME/.vim/ln/ideavimrc $HOME/.ideavimrc
+cp $HOME/.vim/ln/vimrc $HOME/.vimrc
