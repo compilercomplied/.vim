@@ -23,12 +23,14 @@ noremap <leader>cR          :action RenameElements<cr>
 
 " ----- Plugins ------------------------------------------------------------------------------
 set surround
+set commentary
 
 
 
 " \ **************************************************************************************** \
 " \ Ideavim overrides
 " \ **************************************************************************************** \
+nmap <space> <Leader>
 
 " by default don't split in two but move from one split to another (or create
 " a new one without repeating the split.
