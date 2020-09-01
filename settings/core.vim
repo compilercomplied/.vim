@@ -18,9 +18,7 @@ set tags=~/code/.tags           " ctags dir
 set fileformat=unix             " gives <EOL> of current buffer
 
 " Vim needs a POSIX-Compliant shell. Fish is not.
-if $SHELL =~ 'bin/fish' || $SHELL =~ 'bin/zsh'
-    set shell=/usr/bin/bash
-endif
+" set shell=/usr/bin/bash
 
 
 " ----- Input --------------------------------------------------------------------------------
@@ -41,7 +39,7 @@ set number                      " show line numbers
 set relativenumber              " use relative line numbers
 
 set textwidth=0                 " line's 'max char count
-set foldmethod=syntax           " indent= lines with equal indent create a fold
+set foldmethod=indent           " indent= lines with equal indent create a fold
 set foldlevel=95                " folds with a higher level will be closed
 set colorcolumn=95              " color column
 set backspace=indent,eol,start  " backspace behavior in normal mode
@@ -53,7 +51,7 @@ set modeline                    " modeline
 set laststatus=2                " if set to `2`, statusline is always displayed
 
 highlight ColorColumn
-            \ ctermbg=7
+            \ ctermbg=1
             \ guibg=lightgrey   " adds color column of line, width set with `set colorcolumn`
 
 
@@ -84,8 +82,6 @@ let g:netrw_list_hide= '.*\.swp$,.*\.d.ts$,.*\.pyc$,.*\.js.map$'
 
 " ----- Languages ----------------------------------------------------------------------------
 let g:pymode_python     = 'python3' " python 3 as default
-" let g:python_host_prog  = '/usr/bin/env python2'
-" let g:python3_host_prog = '/usr/bin/env python3'
 
 
 " ----- Performance --------------------------------------------------------------------------
@@ -103,11 +99,6 @@ let &t_ut=''
 
 set t_Co=256
 
-" these are overriden by solarized theme
-" Diff colours
-hi DiffText ctermfg=darkred ctermbg=lightgrey
-" Other colours
-hi Search ctermfg=black ctermbg=lightmagenta
 
 " Include jsonc in json syntax highlight
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -125,7 +116,7 @@ endfunction
 
 call SourceDirectory("~/.vim/settings/functions")
 source ~/.vim/settings/mappings.vim
-source ~/.vim/settings/statusline.vim
+" source ~/.vim/settings/statusline.vim
 
 if (editor_mode == "vs") 
     source ~/.vim/settings/visualstudio.vim
@@ -133,8 +124,9 @@ elseif (editor_mode == "rich")
 
     call SourceDirectory("~/.vim/settings/rich")
 
+
     " --- Sources ----------------------------------------------------------------------------
-    " autocmd BufNewFile,BufRead *.cs     source ~/.vim/sources/cs.vim
+    " autocmd BufNewFile,BufRead *.cs     source $HOME/.vim/sources/cs.vim
     " autocmd BufNewFile,BufRead *.rs     source ~/.vim/sources/rust.vim
     " autocmd BufNewFile,BufRead *.toml   source ~/.vim/sources/rust.vim
     " autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim

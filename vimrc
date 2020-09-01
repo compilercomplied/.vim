@@ -23,15 +23,14 @@ Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 Plug 'Yggdroot/indentLine'              " Display indentation for spaces
 
 " ----- Code ---------------------------------------------------------------------------------
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install'}       
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install'}       
 
-Plug 'Shougo/echodoc.vim'               " Show function signatures
-Plug 'xolox/vim-easytags'               " Gen ctags
-Plug 'xolox/vim-misc'                   " Dependency to easy-tags
-Plug 'liuchengxu/vista.vim'             " Browse LSP symbols
+" Plug 'Shougo/echodoc.vim'               " Show function signatures
+" Plug 'xolox/vim-easytags'               " Gen ctags
+" Plug 'xolox/vim-misc'                   " Dependency to easy-tags
+" Plug 'liuchengxu/vista.vim'             " Browse LSP symbols
 Plug 'w0rp/ale'                         " Linting
-Plug 'pseewald/vim-anyfold'             " Language agnostic folding
-Plug 'itspriddle/vim-shellcheck'        " Bash
+" Plug 'itspriddle/vim-shellcheck'        " Bash
 
 " ----- Functionality wrappers ---------------------------------------------------------------
 Plug 'tpope/vim-fugitive'               " Git wrapper
@@ -50,34 +49,34 @@ Plug 'junegunn/fzf', {
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
-Plug 'davidhalter/jedi-vim'             " Code completion
-Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
+" Plug 'davidhalter/jedi-vim'             " Code completion
+" Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 
 " C#
 Plug 'OmniSharp/omnisharp-vim'          " Intellisense
 
 " Rust
-Plug 'rust-lang/rust.vim'               " General goodies
-Plug 'racer-rust/vim-racer'             " Intellisense engine
+" Plug 'rust-lang/rust.vim'               " General goodies
+" Plug 'racer-rust/vim-racer'             " Intellisense engine
 
 " Nix
-Plug 'spwhitt/vim-nix'                  " Syntax
+" Plug 'spwhitt/vim-nix'                  " Syntax
 
 " Wabbascript *dabs*
-Plug 'leafgarland/typescript-vim'       " General goodies 
+" Plug 'leafgarland/typescript-vim'       " General goodies 
 " Plug 'mattn/emmet-vim'                  " Improved HTML handling
 " Plug 'cakebaker/scss-syntax.vim'        " SCSS  syntax
 " Plug 'posva/vim-vue'                    " Vue components syntax
 
 " ----- Tidal env ----------------------------------------------------------------------------
 " Plug 'supercollider/scvim'              " Supercollider
-Plug 'davidgranstrom/scnvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'davidgranstrom/scnvim', { 'do': ':UpdateRemotePlugins' }
 
 " ----- Appearance ---------------------------------------------------------------------------
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'gruvbox-community/gruvbox'
-" Plug 'endel/vim-github-colorscheme'
+Plug 'gruvbox-community/gruvbox'
+Plug 'endel/vim-github-colorscheme'
 
 
 " Initialize plugin system

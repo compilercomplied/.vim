@@ -1,38 +1,6 @@
 
-" ----- deoplete -----------------------------------------------------------------------------
-" set completeopt+=noinsert
-" set completeopt+=noselect
-" let g:deoplete#enable_at_startup=1
-" let g:deoplete#enable_smart_case=1
-
-" let g:deoplete#is_debug_enabled="True"
-" call deoplete#enable_logging('DEBUG', '.deoplete.log')
-" call deoplete#custom#source(
-"             \ 'LanguageClient',
-"             \ 'min_pattern_length',
-"             \ 2
-" \ )
-
-" call deoplete#custom#option({
-"     \ 'auto_complete_delay': 200,
-"     \ 'smart_case': v:true,
-" \ })
-
 " ----- rust ---------------------------------------------------------------------------------
 let g:rust_recommended_style = 0
-
-" ----- jedi-vim -----------------------------------------------------------------------------
-let g:jedi#goto_command = ""
-let g:jedi#goto_assignments_command = ""
-let g:jedi#goto_definitions_command = ""
-let g:jedi#documentation_command = ""
-let g:jedi#usages_command = ""
-let g:jedi#completions_command = ""
-let g:jedi#rename_command = ""
-
-" ----- echodoc ------------------------------------------------------------------------------
-let g:echodoc#enable_at_startup = 1
-" let g:echodoc#type = 'signature'
 
 " ----- rainbow ------------------------------------------------------------------------------
 let g:rainbow_active = 1
@@ -65,12 +33,8 @@ let g:easytags_async = 1
 " ----- vue ----------------------------------------------------------------------------------
 let g:vue_disable_pre_processors=1  " https://github.com/posva/vim-vue/issues/95
 
-" ----- anyfold ------------------------------------------------------------------------------
-autocmd Filetype * AnyFoldActivate
-set foldlevel=99
-
 " ----- Solarized ----------------------------------------------------------------------------
-set background=light
+set background=dark
 colorscheme solarized
 let g:solarized_termcolors=16
 let g:solarized_termtrans=1
