@@ -4,8 +4,13 @@
 
 " Auto install Plug if not installed. Runs PlugInstall afterwards.
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	if has('win32')
+		iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+		ni $HOME/.vim/autoload/plug.vim -Force
+	else
+		silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+			\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	endif
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
