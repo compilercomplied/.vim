@@ -34,7 +34,7 @@ let g:easytags_async = 1
 let g:vue_disable_pre_processors=1  " https://github.com/posva/vim-vue/issues/95
 
 " ----- Solarized ----------------------------------------------------------------------------
-set background=dark
+set background=light
 colorscheme solarized
 let g:solarized_termcolors=16
 let g:solarized_termtrans=1
