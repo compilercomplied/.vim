@@ -20,6 +20,13 @@ set fileformat=unix             " gives <EOL> of current buffer
 " Vim needs a POSIX-Compliant shell. Fish is not.
 " set shell=/usr/bin/bash
 
+" VS config loading seems to break when changing shell this way.
+if has('win32') && editor_mode=="rich"
+  let &shell = 'powershell'
+  set shellquote= shellpipe=\| shellxquote=
+  set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
+  set shellredir=\|\ Out-File\ -Encoding\ UTF8
+endif
 
 " ----- Input --------------------------------------------------------------------------------
 set mouse=                      " Mouse can be enabled for different modes.
